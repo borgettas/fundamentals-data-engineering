@@ -8,11 +8,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install \
     dbt-core \
+    dbt-postgres \
     polars \
     --break-system-packages
 
 WORKDIR /app
 
-# RUN chmod +x app/dbt_init.sh
-
-# RUN app/dbt_init.sh
+RUN chmod 777 .
